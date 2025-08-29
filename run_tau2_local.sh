@@ -100,7 +100,7 @@ function get_reasoning_parser {
 
 # Default values
 TASK_NAME="tau2_bench"
-DOMAIN="retail" # "airline" "retail" "telecom"
+DOMAIN="airline" # "airline" "retail" "telecom"
 MODEL_ID="Qwen/Qwen3-4B-Instruct-2507"
 MODEL_REVISION="main"
 NUM_TRIALS=4
@@ -169,7 +169,7 @@ function wait_for_server {
     local name=$2
     echo "Waiting for $name server to start on port $port..."
     local attempt=0
-    local max_attempts=120  # 10 minutes total (120 * 5 seconds)
+    local max_attempts=360 # 30 minutes total (360 * 5 seconds)
 
     while ! check_server $port; do
         if [ $attempt -ge $max_attempts ]; then
@@ -244,7 +244,8 @@ tau2 run \
     --user-llm "$USER_LLM_CONFIG" \
     --user-llm-args "$USER_LLM_ARGS" \
     --num-trials $NUM_TRIALS \
-    --max-concurrency 8
+    --max-concurrency 8 \
+    --log-level CRITICAL
 
 shutdown_servers
 
