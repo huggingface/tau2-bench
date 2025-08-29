@@ -1,28 +1,26 @@
 #!/bin/bash
 
-"""
-TAU2 Benchmark Evaluation Script
-
-This script runs TAU2 benchmark evaluation with configurable models and parameters.
-
-Usage Examples:
-  # Run with default values
-  ./run_tau2_local.sh
-
-  # Run with custom model
-  ./run_tau2_local.sh --model_id HuggingFaceH4/Qwen3-4B-Instruct-Agentic --model_revision v01.05-step-000000790
-
-  # Run with different domain and trials
-  ./run_tau2_local.sh --domain airline --num-trials 1
-
-Default Values:
-  --model_id: Qwen/Qwen3-4B-Instruct-2507
-  --model_revision: main
-  --domain: retail
-  --num-trials: 4
-
-Available domains: airline, retail, telecom
-"""
+# TAU2 Benchmark Evaluation Script
+#
+# This script runs TAU2 benchmark evaluation with configurable models and parameters.
+#
+# Usage Examples:
+#   # Run with default values
+#   ./run_tau2_local.sh
+#
+#   # Run with custom model
+#   ./run_tau2_local.sh --model_id HuggingFaceH4/Qwen3-4B-Instruct-Agentic --model_revision v01.05-step-000000790
+#
+#   # Run with different domain and trials
+#   ./run_tau2_local.sh --domain airline --num-trials 1
+#
+# Default Values:
+#   --model_id: Qwen/Qwen3-4B-Instruct-2507
+#   --model_revision: main
+#   --domain: retail
+#   --num-trials: 4
+#
+# Available domains: airline, retail, telecom
 
 # Needed for vLLM / LiteLLM
 export VLLM_WORKER_MULTIPROC_METHOD=spawn

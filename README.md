@@ -32,7 +32,7 @@ uv venv taubench --python 3.11 && source taubench/bin/activate && uv pip install
 Next, install vLLM:
 
 ```shell
-uv pip install vllm==0.10.1.1
+uv pip install vllm==0.10.0
 ```
 
 Then install tau2:
