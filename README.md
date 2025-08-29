@@ -18,6 +18,38 @@
 <em>Figure 2: Trajectory of a conversation between an agent and a user</em>
 </div>
 
+## 🍴 Fork instructions
+
+To run the code in this project, first, create a Python virtual environment using e.g. `uv`.
+To install `uv`, follow the [UV Installation Guide](https://docs.astral.sh/uv/getting-started/installation/).
+
+
+```shell
+uv self update
+uv venv taubench --python 3.11 && source taubench/bin/activate && uv pip install --upgrade pip
+```
+
+Next, install vLLM:
+
+```shell
+uv pip install vllm==0.10.0
+```
+
+Then install tau2:
+
+```bash
+uv pip install -e .
+```
+
+You can then run simulations with local models via:
+
+```sh
+./run_tau2_local.sh \
+  --model_id Qwen/Qwen3-4B-Instruct-2507 \
+  --domain retail \
+  --num_trials 4
+```
+
 ## Overview
 
 $\tau^2$-bench implements a simulation framework for evaluating customer service agents across various domains.
