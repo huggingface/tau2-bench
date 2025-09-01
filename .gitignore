@@ -184,7 +184,3 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
-
-# Local dev
-eval_results/
-.claude
